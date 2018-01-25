@@ -1,0 +1,22 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Alura.Loja.Testes.ConsoleApp.Entidades
+{
+    public class Produto
+    {
+        public int Id { get; set; }
+        public string Nome { get; set; }
+        public string Categoria { get; set; }
+        public double PrecoUnitario { get; set; }
+        public string Unidade { get; internal set; }
+
+        public override string ToString()
+        {
+            return $"Produto: {this.Id}, {this.Nome}, {this.Categoria}, {this.PrecoUnitario}";
+        }
+    }
+}
