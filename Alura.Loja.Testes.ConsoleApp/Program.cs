@@ -13,8 +13,6 @@ namespace Alura.Loja.Testes.ConsoleApp
     {
         static void Main(string[] args)
         {
-            int x = 10;
-            Console.WriteLine(x);
         }
 
         //private static void AtualizaProduto()
