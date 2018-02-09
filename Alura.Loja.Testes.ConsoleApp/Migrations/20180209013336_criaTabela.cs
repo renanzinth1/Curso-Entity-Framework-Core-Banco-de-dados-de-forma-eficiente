@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Metadata;
 
 namespace Alura.Loja.Testes.ConsoleApp.Migrations
 {
-    public partial class Unidade : Migration
+    public partial class criaTabela : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

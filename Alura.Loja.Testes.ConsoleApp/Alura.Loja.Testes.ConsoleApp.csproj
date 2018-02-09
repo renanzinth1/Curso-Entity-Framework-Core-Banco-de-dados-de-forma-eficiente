@@ -176,9 +176,9 @@
     <Compile Include="Entidades\Produto.cs" />
     <Compile Include="Inteface\IProdutoDAO.cs" />
     <Compile Include="LojaContext.cs" />
-    <Compile Include="Migrations\20180118011233_Unidade.cs" />
-    <Compile Include="Migrations\20180118011233_Unidade.designer.cs">
-      <DependentUpon>20180118011233_Unidade.cs</DependentUpon>
+    <Compile Include="Migrations\20180209013336_criaTabela.cs" />
+    <Compile Include="Migrations\20180209013336_criaTabela.designer.cs">
+      <DependentUpon>20180209013336_criaTabela.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\LojaContextModelSnapshot.cs" />
     <Compile Include="Program.cs" />

@@ -13,6 +13,19 @@ namespace Alura.Loja.Testes.ConsoleApp
     {
         static void Main(string[] args)
         {
+            var dao = new ProdutoDAOEntity();
+
+            var prod = new Produto()
+            {
+                Nome = "Computador i5",
+                Categoria = "Eletrônicos",
+                Unidade = "5",
+                PrecoUnitario = 2000.0
+            };
+
+            dao.Adicionar(prod);
+
+            
         }
 
         //private static void AtualizaProduto()

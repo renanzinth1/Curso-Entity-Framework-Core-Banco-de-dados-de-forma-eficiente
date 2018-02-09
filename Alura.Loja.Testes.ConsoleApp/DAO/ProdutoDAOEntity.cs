@@ -12,7 +12,7 @@ namespace Alura.Loja.Testes.ConsoleApp.DAO
     {
         private readonly LojaContext ctx;
 
-        public ProdutoDAOEntity(LojaContext ctx)
+        public ProdutoDAOEntity()
         {
             this.ctx = new LojaContext();
         }
