@@ -172,13 +172,24 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entidades\Compra.cs" />
     <Compile Include="DAO\ProdutoDAOEntity.cs" />
     <Compile Include="Entidades\Produto.cs" />
+    <Compile Include="Entidades\Promocao.cs" />
+    <Compile Include="Entidades\PromocaoProduto.cs" />
     <Compile Include="Inteface\IProdutoDAO.cs" />
     <Compile Include="LojaContext.cs" />
     <Compile Include="Migrations\20180209013336_criaTabela.cs" />
     <Compile Include="Migrations\20180209013336_criaTabela.designer.cs">
       <DependentUpon>20180209013336_criaTabela.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\20180209132526_Compra.cs" />
+    <Compile Include="Migrations\20180209132526_Compra.designer.cs">
+      <DependentUpon>20180209132526_Compra.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\20180211193225_Promocao.cs" />
+    <Compile Include="Migrations\20180211193225_Promocao.designer.cs">
+      <DependentUpon>20180211193225_Promocao.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\LojaContextModelSnapshot.cs" />
     <Compile Include="Program.cs" />

@@ -12,7 +12,8 @@ namespace Alura.Loja.Testes.ConsoleApp.Entidades
         public string Nome { get; set; }
         public string Categoria { get; set; }
         public double PrecoUnitario { get; set; }
-        public string Unidade { get; internal set; }
+        public string Unidade { get; set; }
+        public IList<PromocaoProduto> Promocoes { get; set; }
 
         public override string ToString()
         {

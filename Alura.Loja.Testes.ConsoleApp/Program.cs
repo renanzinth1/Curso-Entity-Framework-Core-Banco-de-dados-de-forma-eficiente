@@ -13,19 +13,26 @@ namespace Alura.Loja.Testes.ConsoleApp
     {
         static void Main(string[] args)
         {
-            var dao = new ProdutoDAOEntity();
+            var p1 = new Produto() { Nome = "Suco de Laranja", Categoria = "Bebidas", PrecoUnitario = 8.79, Unidade = "Litros"};
+            var p2 = new Produto() { Nome = "Café", Categoria = "Bebidas", PrecoUnitario = 12.45, Unidade = "Gramas" };
+            var p3 = new Produto() { Nome = "Macarrão", Categoria = "Alimentos", PrecoUnitario = 4.23, Unidade = "Gramas" };
 
-            var prod = new Produto()
-            {
-                Nome = "Computador i5",
-                Categoria = "Eletrônicos",
-                Unidade = "5",
-                PrecoUnitario = 2000.0
-            };
+            var promocaoPascoa = new Promocao();
+            promocaoPascoa.Descricao = "Páscoa Feliz";
+            promocaoPascoa.DataInicio = DateTime.Now;
+            promocaoPascoa.DataTermino = DateTime.Now.AddMonths(3);
+             
+            promocaoPascoa.IncluiProduto(p1);
+            promocaoPascoa.IncluiProduto(p2);
+            promocaoPascoa.IncluiProduto(p3);
 
-            dao.Adicionar(prod);
+            var ctx = new LojaContext();
+            var promocao = ctx.Promocoes.FirstOrDefault(p => p.ID == 1);
+            ctx.Promocoes.Remove(promocao);
 
-            
+            ctx.SaveChanges();
+            ctx.Dispose();
+
         }
 
         //private static void AtualizaProduto()
@@ -84,20 +91,6 @@ namespace Alura.Loja.Testes.ConsoleApp
         //    using (var contexto = new ProdutoDAOEntity())
         //    {
         //        contexto.Adicionar(p);
-        //    }
-        //}
-
-        //private static void GravarUsandoAdoNet()
-        //{
-        //    Produto p = new Produto();
-        //    p.Nome = "Harry Potter e a Ordem da Fênix";
-        //    p.Categoria = "Livros";
-        //    p.Preco = 19.89;
-
-
-        //    using (var repo = new ProdutoDAO())
-        //    {
-        //        repo.Adicionar(p);
         //    }
         //}
     }
