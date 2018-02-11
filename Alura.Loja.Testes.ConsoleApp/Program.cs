@@ -13,6 +13,10 @@ namespace Alura.Loja.Testes.ConsoleApp
     {
         static void Main(string[] args)
         {
+        }
+
+        private static void UmParaUm()
+        {
             var fulano = new Cliente();
             fulano.Nome = "Renan Narciso";
             fulano.EnderecoDeEntrega = new Endereco()
