@@ -27,9 +27,7 @@ namespace Alura.Loja.Testes.ConsoleApp
             promocaoPascoa.IncluiProduto(p3);
 
             var ctx = new LojaContext();
-            var promocao = ctx.Promocoes.FirstOrDefault(p => p.ID == 1);
-            ctx.Promocoes.Remove(promocao);
-
+            ctx.Promocoes.Add(promocaoPascoa);
             ctx.SaveChanges();
             ctx.Dispose();
 
