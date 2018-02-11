@@ -18,15 +18,18 @@ namespace Alura.Loja.Testes.ConsoleApp
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            //Configuração para criar chave primária composta na tabela PromocaoProduto
             modelBuilder
                 .Entity<PromocaoProduto>()
                 .HasKey(pp => new { pp.PromocaoID, pp.ProdutoID });
             base.OnModelCreating(modelBuilder);
 
+            //Configuração para alterar o nome da tabela de Endereco para Enderecos
             modelBuilder
                 .Entity<Endereco>()
                 .ToTable("Enderecos");
 
+            //Configuração para atribuir uma chave primária na tabela Endereco de forma explícita
             modelBuilder
                .Entity<Endereco>()
                .HasKey("ClienteID");
