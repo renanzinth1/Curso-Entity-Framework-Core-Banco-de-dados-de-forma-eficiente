@@ -13,7 +13,27 @@ namespace Alura.Loja.Testes.ConsoleApp
     {
         static void Main(string[] args)
         {
-            var p1 = new Produto() { Nome = "Suco de Laranja", Categoria = "Bebidas", PrecoUnitario = 8.79, Unidade = "Litros"};
+            var fulano = new Cliente();
+            fulano.Nome = "Renan Narciso";
+            fulano.EnderecoDeEntrega = new Endereco()
+            {
+                Numero = 15,
+                Logradouro = "Rua Cantan",
+                Complemento = "Fundos",
+                Bairro = "Brás de Pina",
+                Cidade = "Rio de Janeiro"
+            };
+
+            using (var ctx = new LojaContext())
+            {
+                ctx.Clientes.Add(fulano);
+                ctx.SaveChanges();
+            }
+        }
+
+        private static void MuitosParaMuitos()
+        {
+            var p1 = new Produto() { Nome = "Suco de Laranja", Categoria = "Bebidas", PrecoUnitario = 8.79, Unidade = "Litros" };
             var p2 = new Produto() { Nome = "Café", Categoria = "Bebidas", PrecoUnitario = 12.45, Unidade = "Gramas" };
             var p3 = new Produto() { Nome = "Macarrão", Categoria = "Alimentos", PrecoUnitario = 4.23, Unidade = "Gramas" };
 
@@ -21,7 +41,7 @@ namespace Alura.Loja.Testes.ConsoleApp
             promocaoPascoa.Descricao = "Páscoa Feliz";
             promocaoPascoa.DataInicio = DateTime.Now;
             promocaoPascoa.DataTermino = DateTime.Now.AddMonths(3);
-             
+
             promocaoPascoa.IncluiProduto(p1);
             promocaoPascoa.IncluiProduto(p2);
             promocaoPascoa.IncluiProduto(p3);
@@ -30,7 +50,6 @@ namespace Alura.Loja.Testes.ConsoleApp
             ctx.Promocoes.Add(promocaoPascoa);
             ctx.SaveChanges();
             ctx.Dispose();
-
         }
 
         //private static void AtualizaProduto()
@@ -66,8 +85,7 @@ namespace Alura.Loja.Testes.ConsoleApp
 
         //private static void RecuperarProdutos()
         //{
-        //    var ctx = new LojaContext();
-        //    using(var repo = new ProdutoDAOEntity(ctx))
+        //    using(var repo = new ProdutoDAOEntity())
         //    {
         //        IList<Produto> produtos = repo.Produtos();
 

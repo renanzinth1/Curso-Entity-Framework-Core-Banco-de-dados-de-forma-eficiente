@@ -19,7 +19,7 @@ namespace Alura.Loja.Testes.ConsoleApp.Entidades
             this.Produtos = new List<PromocaoProduto>();
         }
 
-        internal void IncluiProduto(Produto p)
+        public void IncluiProduto(Produto p)
         {
             this.Produtos.Add(new PromocaoProduto() { Produto = p });
         }
