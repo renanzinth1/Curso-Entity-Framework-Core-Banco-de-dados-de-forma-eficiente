@@ -33,6 +33,8 @@ namespace Alura.Loja.Testes.ConsoleApp
             modelBuilder
                .Entity<Endereco>()
                .HasKey("ClienteID");
+
+            // Testando nova branch
         }
     }
 }
